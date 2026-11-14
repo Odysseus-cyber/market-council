@@ -1,6 +1,6 @@
 # 可展示 MVP：执行与学习计划
 
-更新日期：2026-11-13。状态：规划已确定，工程尚未实施。
+更新日期：2026-11-14。状态：规划已确定，工程尚未实施。
 
 返回 [项目首页](../README.md) · 查看 [总体系统设计](system-design.md)
 
@@ -96,6 +96,8 @@ DeepSeek 的流式调用在末尾返回完整 usage；千问的流式协议与�
 最小打包验证放在步骤 1；步骤 4 验证完整体验。worker 的完整 onedir 运行目录随 App 分发，并由 Electron 通过实际资源路径启动。[Electron ASAR 限制](https://www.electronjs.org/docs/latest/tutorial/asar-archives)、[PyInstaller 打包说明](https://pyinstaller.org/en/stable/operating-mode.html)
 
 ## 6. 展示与验收
+
+用量统计的具体输入与预期结果见 [Token 用量验收样例](token-usage-examples.md)。其中八组案例使用人工构造的数据，均尚未执行，可用于后续实现与测试核对。
 
 ### 展示脚本
 
