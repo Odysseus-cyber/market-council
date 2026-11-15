@@ -1,0 +1,51 @@
+{
+  "name": "market-council",
+  "productName": "Market Council",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.19.1",
+  "description": "A static desktop prototype for multi-model research conversations.",
+  "author": "WANG HAORAN",
+  "type": "module",
+  "main": ".vite/build/main.cjs",
+  "engines": {
+    "node": ">=24.22.3 <25"
+  },
+  "scripts": {
+    "postinstall": "install-electron",
+    "start": "electron-forge start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "1.5.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.73.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "recharts": "3.10.1",
+    "tailwind-merge": "3.7.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "8.0.1",
+    "@electron-forge/plugin-vite": "8.0.1",
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "electron": "45.3.2",
+    "eslint": "10.15.0",
+    "globals": "17.14.0",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "7.3.8"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents": false
+  }
+}

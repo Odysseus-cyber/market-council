@@ -4,7 +4,40 @@ A multi-model financial research chatroom supporting API and local models, sched
 
 一个面向个人的多模型投研讨论 App：围绕同一话题邀请不同模型发言，保留讨论过程，并看清每次调用的用量。
 
-**当前状态：仅有规划文档，尚未开始工程实施，也没有可下载运行的 App。上述英文简介描述长期方向；首个 MVP 只实现下述双模型聊天与 Token 看板。**
+**当前状态：已有深色静态桌面原型，可在开发模式启动；模型调用、业务存储和真实用量统计尚未实现，暂无独立 `.app` 产物。上述英文简介描述长期方向；完整 MVP 仍待完成。**
+
+## 运行静态原型
+
+原型包含聊天、Token 看板和模型设置三个可切换页面。所有文本与用量均为人工构造的演示数据，聊天输入、发送、停止、模型配置和连接测试均禁用，不接收真实 API Key。演示状态只存在于内存，重启后回到默认聊天页面。
+
+环境要求：macOS Apple Silicon、Node **24.22.3**（见 `.nvmrc`），本次使用 npm **11.19.1**。在仓库根目录运行：
+
+```sh
+npm ci
+npm start
+```
+
+如果没有 Node，可以从 [Node 官方下载](https://nodejs.org/en/download/) 安装对应版本；也可使用本项目的本地工具目录方式，不修改全局配置：
+
+```sh
+mkdir -p .tools
+curl -fL https://nodejs.org/dist/v24.22.3/node-v24.22.3-darwin-arm64.tar.gz -o .tools/node-v24.22.3-darwin-arm64.tar.gz
+tar -xzf .tools/node-v24.22.3-darwin-arm64.tar.gz -C .tools
+export PATH="$PWD/.tools/node-v24.22.3-darwin-arm64/bin:$PATH"
+npm ci
+npm start
+```
+
+`export` 仅影响当前终端；再次打开终端时需要重新设置，或使用已经安装好的 Node 24.22.3。`npm start` 会启动 Vite 开发服务并打开 Electron 桌面窗口，常规开发期间保持该终端运行，使用 `Ctrl+C` 停止。当前没有独立安装包或 Finder 启动交付。
+
+```sh
+npm run typecheck
+npm run lint
+```
+
+2026-11-15 已在 macOS 15.5 / Apple Silicon 上完成 `npm ci`、类型检查和 lint，并实际启动 Electron，检查三页切换、1280 × 820 与 960 × 640 窗口、禁用控件、演示数据一致性及关闭后重新启动。此记录只覆盖静态界面，不代表真实聊天或 Token 结算业务验收通过。首次安装依赖时会从官方发布源下载 Electron 运行文件，需要网络连接。
+
+原型使用 Electron Forge 的 Vite/TypeScript 工程结构，React 负责三个页面，Tailwind CSS 与本地 shadcn/ui 组件负责样式，Recharts 展示固定样例。图表与调用明细共用同一份演示数据。Electron 不向页面开放 Node、文件系统或凭据 IPC；Python worker、SQLite 和 Keychain 尚未接入。
 
 ## 首个可展示 MVP
 
@@ -85,9 +118,10 @@ Python 是业务数据库的唯一写入方。具体依赖版本在工程初始�
 
 - [x] 明确双模型 MVP 与候选扩展的边界。
 - [x] 编写总体设计、执行顺序和验收计划。
+- [x] 建立步骤 1 的静态桌面界面原型（开发模式，演示数据）。
 - [ ] 完成首个设计练习与步骤 1。
 - [ ] 完成步骤 2：两模型讨论。
 - [ ] 完成步骤 3：Token 看板。
 - [ ] 完成步骤 4：独立 App 展示验收。
 
-当前没有启动命令、安装包或已验证的运行结果。下一步先开始 MVP 计划中的第一个设计练习。
+原型是步骤 1 的界面子任务，不代表单模型链路或双模型 MVP 已完成。下一步仍从 MVP 计划中的第一个设计练习开始；八组 Token 业务验收案例保持未执行。
