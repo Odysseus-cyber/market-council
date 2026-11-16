@@ -8,6 +8,8 @@
 
 项目入口见 [README](../README.md)，近期任务、七步训练方式与验收流程见 [MVP 执行计划](mvp-plan.md)。
 
+既有架构的选择理由、备选方案、接受的代价与重新评估条件见 [ADR 0001：本地桌面架构](adr/0001-local-desktop-architecture.md)。
+
 ## 1. 产品目标与 MVP 边界
 
 Market Council 是个人使用的多模型投研讨论 App。用户提供财经话题或文本材料，主持两个外部 API 模型的讨论，并在同一个 App 内查看 Token 消耗。
