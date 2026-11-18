@@ -64,6 +64,7 @@ Token 看板展示供应商实际返回的统计。生成过程中可能只有�
 | [总体系统设计](docs/system-design.md) | 理解当前架构、数据归属、接口边界，以及候选扩展会怎样接入 |
 | [MVP 执行与学习计划](docs/mvp-plan.md) | 查看四步开发顺序、交互与统计规则、展示验收和首个设计练习 |
 | [静态原型源码导读](docs/prototype-code-tour.md) | 沿启动、页面切换与演示数据追踪实际代码，区分已有界面与待实现业务 |
+| [聊天交互验收场景](docs/chat-acceptance-scenarios.md) | 核对点名、交错回答、生成期间编辑、局部失败与下一轮上下文；案例尚未执行 |
 | [Token 用量验收样例](docs/token-usage-examples.md) | 用具体数字核对累计快照、重复事件、未知用量、重试与统计范围；案例尚未执行 |
 | [ADR 0001：本地桌面架构](docs/adr/0001-local-desktop-architecture.md) | 了解既有技术路线的选择理由、维护代价和重新评估条件 |
 
